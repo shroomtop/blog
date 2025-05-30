@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>SEO-Optimized Blog Prompt Generator | Shroomtop420™</title>
+  <meta name="description" content="Neon/futuristic infographic for generating SEO-optimized blog prompts.">
+  <meta name="theme-color" content="#0ff2ff">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glow {
+      box-shadow: 0 0 24px 6px #0ff2ff, 0 0 80px 0 #5ef5ef40 inset;
+    }
+    .neon-txt {
+      text-shadow: 0 0 8px #0ff2ff, 0 0 20px #00ffe2a0;
+    }
+    .neon-ring {
+      box-shadow: 0 0 0 4px #0ff2ff50, 0 0 32px 8px #0ff2ff70;
+      border-radius: 9999px;
+    }
+    .pulse {
+      animation: pulse-glow 1.8s infinite;
+    }
+    @keyframes pulse-glow {
+      0%,100% { box-shadow: 0 0 32px #0ff2ff88; }
+      50% { box-shadow: 0 0 64px 12px #0ff2ff; }
+    }
+    .bg-gradient-fx {
+      background: radial-gradient(circle at 60% 40%, #0ff2ff40 0%, #111827 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center bg-black bg-gradient-fx">
+  <!-- Headline Section -->
+  <header class="text-center mt-10 mb-6">
+    <h1 class="text-4xl md:text-5xl font-extrabold neon-txt mb-3 tracking-wide uppercase">SEO-Optimized Blog<br><span class="text-[#0ff2ff]">Prompt Generator</span></h1>
+    <h2 class="text-lg md:text-xl text-[#A0FDFD] neon-txt mb-2">Supercharge Your Content — Get Blog Prompts That Rank</h2>
+    <p class="max-w-xl mx-auto text-[#b2fbfa] mb-4">Generate powerful, search-engine-friendly prompts for blogs, articles, and marketing—engineered for 2025 SEO strategies.</p>
+  </header>
+
+  <!-- Main Feature: Neon Generator Card -->
+  <main class="flex flex-col items-center justify-center">
+    <section class="glow pulse neon-ring p-6 md:p-8 bg-[#121a24d0] rounded-2xl w-full max-w-xl transition-all duration-200">
+      <div class="flex flex-col gap-4">
+        <div>
+          <label for="topic" class="block mb-1 text-[#90f8f6] font-medium">Your Topic or Niche</label>
+          <input id="topic" type="text" class="w-full px-4 py-2 bg-[#08141a] text-[#0ff2ff] rounded-lg focus:ring-2 focus:ring-[#0ff2ff] neon-txt transition" placeholder="e.g. AI Prompt Engineering" autocomplete="off">
+        </div>
+        <div>
+          <label for="keywords" class="block mb-1 text-[#90f8f6] font-medium">Target Keywords <span class="text-xs">(comma-separated)</span></label>
+          <input id="keywords" type="text" class="w-full px-4 py-2 bg-[#08141a] text-[#0ff2ff] rounded-lg focus:ring-2 focus:ring-[#0ff2ff] neon-txt transition" placeholder="e.g. ChatGPT, SEO, Blog" autocomplete="off">
+        </div>
+        <div>
+          <label for="tone" class="block mb-1 text-[#90f8f6] font-medium">Tone / Audience</label>
+          <select id="tone" class="w-full px-4 py-2 bg-[#08141a] text-[#0ff2ff] rounded-lg focus:ring-2 focus:ring-[#0ff2ff] neon-txt">
+            <option value="Expert">Expert</option>
+            <option value="Beginner">Beginner-Friendly</option>
+            <option value="Conversational">Conversational</option>
+            <option value="Technical">Technical</option>
+            <option value="Persuasive">Persuasive</option>
+          </select>
+        </div>
+        <button id="generate" class="w-full mt-2 py-2 text-lg bg-[#0ff2ff] text-black font-bold rounded-lg neon-txt hover:bg-[#00e1cf] transition">Generate SEO Blog Prompt</button>
+        <div id="output" class="min-h-[60px] mt-4 px-4 py-3 bg-[#071117e0] rounded-xl neon-txt text-[#0ff2ff] font-mono text-base whitespace-pre-line transition-all"></div>
+      </div>
+    </section>
+    <!-- Visual note -->
+    <div class="mt-8 text-center text-[#2bfffa] text-sm opacity-80">
+      <svg width="28" height="28" fill="none" class="inline align-middle -mt-2 mr-2">
+        <circle cx="14" cy="14" r="13" stroke="#0ff2ff" stroke-width="2" class="pulse"/>
+        <circle cx="14" cy="14" r="7" fill="#0ff2ff55" />
+      </svg>
+      Fully offline, privacy-safe, runs anywhere.  
+      <a href="https://www.shroomtop420.com" target="_blank" class="underline text-[#0ff2ff] hover:text-[#5ef5ef] transition">Learn More</a>
+    </div>
+  </main>
+
+  <!-- Quick How-To / Info -->
+  <footer class="max-w-xl mx-auto mt-10 p-6 rounded-xl bg-[#131e25b0] border border-[#0ff2ff30] text-[#c2feff] shadow-lg text-center text-sm">
+    <div class="font-semibold text-[#0ff2ff] mb-1">How it works:</div>
+    <ul class="text-left ml-2 space-y-1">
+      <li><b>1.</b> Enter your blog topic, target keywords, and select your desired tone/audience.</li>
+      <li><b>2.</b> Click <span class="text-[#0ff2ff]">Generate</span> for an AI-ready prompt, tuned for SEO in 2025.</li>
+      <li><b>3.</b> Paste the output into ChatGPT (or your favorite LLM) for instant, rank-ready blog content.</li>
+    </ul>
+    <div class="mt-2 italic text-[#8be1e0]">Optimized by the Shroomtop420™ Perfect Prompt Generator.</div>
+  </footer>
+  <!-- Inline JS: Generator Logic -->
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $("generate").onclick = () => {
+      const topic = $("topic").value.trim() || "[your topic]";
+      const keywords = $("keywords").value.trim() || "[target keywords]";
+      const tone = $("tone").value;
+      $("output").innerText =
+`You are an elite SEO strategist and expert blog author.
+
+Write a highly engaging, ${tone.toLowerCase()} blog post about "${topic}" targeting the following keywords: ${keywords}.
+
+Requirements:
+- Optimize for search intent and 2025 SEO ranking factors
+- Use clear subheadings (H2/H3), meta title, meta description
+- Include internal/external link suggestions
+- Add a compelling intro and CTA
+- Avoid fluff, maximize value per paragraph
+
+Format: Markdown.
+
+[Blog post starts below]`;
+    };
+  </script>
+</body>
+</html>
