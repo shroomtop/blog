@@ -1,0 +1,8 @@
+{
+  "author": "Shroomtop420™",
+  "version": "v2.1.0",
+  "type": "blog",
+  "schema": "https://shroomtop420.com/promptmeta.schema.json",
+  "license": "stripe-commercial-unlock",
+  "stack": ["HTML5","TailwindCSS","ES6","Offline","PWA"]
+}

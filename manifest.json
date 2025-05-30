@@ -1,0 +1,9 @@
+{
+  "name":"Shroomtop420™ Blog",
+  "short_name":"Shroomtop420",
+  "start_url":".",
+  "display":"standalone",
+  "background_color":"#000b14",
+  "theme_color":"#00ffe7",
+  "icons":[]
+}

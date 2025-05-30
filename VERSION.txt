@@ -1,0 +1,3 @@
+Shroomtop420™ Blog v2.1.0
+Build: 2025-05-30
+Stack: HTML5+Tailwind+ES6+PWA
