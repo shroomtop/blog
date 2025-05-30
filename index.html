@@ -3,97 +3,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>SEO-Optimized Blog Prompt Generator | Shroomtop420™</title>
-  <meta name="description" content="Neon/futuristic infographic for generating SEO-optimized blog prompts.">
-  <meta name="theme-color" content="#0ff2ff">
+  <title>Shroomtop420™ Blog — Next-Gen SEO/Prompt Hub</title>
+  <meta name="description" content="The official Shroomtop420™ blog: Neon/futuristic prompts, advanced SEO, Stripe paywall, and live AI tooling. All offline, all copy-paste.">
+  <meta name="theme-color" content="#00ffe7">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shroomtop420™ Blog — Neon Prompt & SEO Hub">
+  <meta property="og:description" content="Your AI-driven, Stripe-monetized, SEO-optimized hub for prompt engineering and future-proof digital product creation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shroomtop.github.io/blog/">
+  <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDBmZmU3IiBoZWlnaHQ9IjEwMCIgd2lkdGg9IjEwMCI+PC9zdmc+">
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    .neon {
+      text-shadow: 0 0 8px #0ff2ff, 0 0 24px #0ff2ff80;
+    }
     .glow {
-      box-shadow: 0 0 24px 6px #0ff2ff, 0 0 80px 0 #5ef5ef40 inset;
+      box-shadow: 0 0 28px 2px #00ffe7, 0 0 64px 12px #0ff2ff44 inset;
     }
-    .neon-txt {
-      text-shadow: 0 0 8px #0ff2ff, 0 0 20px #00ffe2a0;
-    }
-    .neon-ring {
-      box-shadow: 0 0 0 4px #0ff2ff50, 0 0 32px 8px #0ff2ff70;
-      border-radius: 9999px;
+    .ring-glow {
+      box-shadow: 0 0 0 4px #00ffe770, 0 0 24px #00ffe780;
+      border-radius: 1.5rem;
     }
     .pulse {
-      animation: pulse-glow 1.8s infinite;
+      animation: pulse-glow 2s infinite;
     }
     @keyframes pulse-glow {
-      0%,100% { box-shadow: 0 0 32px #0ff2ff88; }
-      50% { box-shadow: 0 0 64px 12px #0ff2ff; }
+      0%,100% { box-shadow: 0 0 16px #00ffe780; }
+      50% { box-shadow: 0 0 48px 8px #0ff2ff; }
     }
-    .bg-gradient-fx {
-      background: radial-gradient(circle at 60% 40%, #0ff2ff40 0%, #111827 100%);
-    }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
   </style>
-</head>
-<body class="min-h-screen flex flex-col items-center justify-center bg-black bg-gradient-fx">
-  <!-- Headline Section -->
-  <header class="text-center mt-10 mb-6">
-    <h1 class="text-4xl md:text-5xl font-extrabold neon-txt mb-3 tracking-wide uppercase">SEO-Optimized Blog<br><span class="text-[#0ff2ff]">Prompt Generator</span></h1>
-    <h2 class="text-lg md:text-xl text-[#A0FDFD] neon-txt mb-2">Supercharge Your Content — Get Blog Prompts That Rank</h2>
-    <p class="max-w-xl mx-auto text-[#b2fbfa] mb-4">Generate powerful, search-engine-friendly prompts for blogs, articles, and marketing—engineered for 2025 SEO strategies.</p>
-  </header>
-
-  <!-- Main Feature: Neon Generator Card -->
-  <main class="flex flex-col items-center justify-center">
-    <section class="glow pulse neon-ring p-6 md:p-8 bg-[#121a24d0] rounded-2xl w-full max-w-xl transition-all duration-200">
-      <div class="flex flex-col gap-4">
-        <div>
-          <label for="topic" class="block mb-1 text-[#90f8f6] font-medium">Your Topic or Niche</label>
-          <input id="topic" type="text" class="w-full px-4 py-2 bg-[#08141a] text-[#0ff2ff] rounded-lg focus:ring-2 focus:ring-[#0ff2ff] neon-txt transition" placeholder="e.g. AI Prompt Engineering" autocomplete="off">
-        </div>
-        <div>
-          <label for="keywords" class="block mb-1 text-[#90f8f6] font-medium">Target Keywords <span class="text-xs">(comma-separated)</span></label>
-          <input id="keywords" type="text" class="w-full px-4 py-2 bg-[#08141a] text-[#0ff2ff] rounded-lg focus:ring-2 focus:ring-[#0ff2ff] neon-txt transition" placeholder="e.g. ChatGPT, SEO, Blog" autocomplete="off">
-        </div>
-        <div>
-          <label for="tone" class="block mb-1 text-[#90f8f6] font-medium">Tone / Audience</label>
-          <select id="tone" class="w-full px-4 py-2 bg-[#08141a] text-[#0ff2ff] rounded-lg focus:ring-2 focus:ring-[#0ff2ff] neon-txt">
-            <option value="Expert">Expert</option>
-            <option value="Beginner">Beginner-Friendly</option>
-            <option value="Conversational">Conversational</option>
-            <option value="Technical">Technical</option>
-            <option value="Persuasive">Persuasive</option>
-          </select>
-        </div>
-        <button id="generate" class="w-full mt-2 py-2 text-lg bg-[#0ff2ff] text-black font-bold rounded-lg neon-txt hover:bg-[#00e1cf] transition">Generate SEO Blog Prompt</button>
-        <div id="output" class="min-h-[60px] mt-4 px-4 py-3 bg-[#071117e0] rounded-xl neon-txt text-[#0ff2ff] font-mono text-base whitespace-pre-line transition-all"></div>
-      </div>
-    </section>
-    <!-- Visual note -->
-    <div class="mt-8 text-center text-[#2bfffa] text-sm opacity-80">
-      <svg width="28" height="28" fill="none" class="inline align-middle -mt-2 mr-2">
-        <circle cx="14" cy="14" r="13" stroke="#0ff2ff" stroke-width="2" class="pulse"/>
-        <circle cx="14" cy="14" r="7" fill="#0ff2ff55" />
-      </svg>
-      Fully offline, privacy-safe, runs anywhere.  
-      <a href="https://www.shroomtop420.com" target="_blank" class="underline text-[#0ff2ff] hover:text-[#5ef5ef] transition">Learn More</a>
-    </div>
-  </main>
-
-  <!-- Quick How-To / Info -->
-  <footer class="max-w-xl mx-auto mt-10 p-6 rounded-xl bg-[#131e25b0] border border-[#0ff2ff30] text-[#c2feff] shadow-lg text-center text-sm">
-    <div class="font-semibold text-[#0ff2ff] mb-1">How it works:</div>
-    <ul class="text-left ml-2 space-y-1">
-      <li><b>1.</b> Enter your blog topic, target keywords, and select your desired tone/audience.</li>
-      <li><b>2.</b> Click <span class="text-[#0ff2ff]">Generate</span> for an AI-ready prompt, tuned for SEO in 2025.</li>
-      <li><b>3.</b> Paste the output into ChatGPT (or your favorite LLM) for instant, rank-ready blog content.</li>
-    </ul>
-    <div class="mt-2 italic text-[#8be1e0]">Optimized by the Shroomtop420™ Perfect Prompt Generator.</div>
-  </footer>
-  <!-- Inline JS: Generator Logic -->
+  <!-- Service Worker Registration -->
   <script>
-    const $ = (id) => document.getElementById(id);
-    $("generate").onclick = () => {
-      const topic = $("topic").value.trim() || "[your topic]";
-      const keywords = $("keywords").value.trim() || "[target keywords]";
-      const tone = $("tone").value;
-      $("output").innerText =
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</head>
+<body class="bg-black text-white min-h-screen flex flex-col font-sans">
+  <!-- Neon Hero / Featured Post -->
+  <header class="w-full bg-gradient-to-br from-[#0ff2ff20] via-[#001f29] to-[#000b14] pt-8 pb-6 md:pt-14 md:pb-10 flex flex-col items-center justify-center relative">
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0" aria-hidden="true">
+      <div class="absolute w-96 h-96 bg-[#0ff2ff30] rounded-full blur-3xl -top-32 -left-48 animate-pulse"></div>
+      <div class="absolute w-72 h-72 bg-[#00ffe790] rounded-full blur-2xl top-16 right-0 animate-pulse"></div>
+    </div>
+    <h1 class="z-10 text-4xl md:text-6xl font-black neon text-center tracking-wide drop-shadow-lg">Shroomtop420™ <span class="text-[#0ff2ff]">Blog</span></h1>
+    <p class="z-10 max-w-2xl mt-4 mb-4 md:mb-6 text-lg md:text-xl text-[#9efaf9] neon text-center">
+      The world’s most advanced prompt, SEO, and monetization hub—fully offline, PWA-ready, and powered by live AI tooling.
+    </p>
+    <div class="z-10 mt-2 flex gap-4 justify-center">
+      <a href="https://www.shroomtop420.com" class="rounded-full neon px-4 py-2 text-[#0ff2ff] border-2 border-[#0ff2ff99] ring-glow font-bold hover:bg-[#0ff2ff30] transition" target="_blank">Shroomtop420.com</a>
+      <a href="https://buy.stripe.com/3cs162ggTdSm3WEaEE" class="rounded-full neon px-4 py-2 text-black bg-[#0ff2ff] font-bold border-2 border-[#0ff2ff] hover:bg-[#00ccba] hover:text-white transition pulse" target="_blank">Support / Unlock Pro</a>
+    </div>
+    <div class="z-10 mt-3 flex gap-2 justify-center">
+      <a href="LICENSE.txt" download class="underline text-xs text-[#0ff2ff] hover:text-[#00e7f7]">LICENSE.txt</a>
+      <a href="README.txt" download class="underline text-xs text-[#0ff2ff] hover:text-[#00e7f7]">README.txt</a>
+      <a href="promptmeta.json" download class="underline text-xs text-[#0ff2ff] hover:text-[#00e7f7]">promptmeta.json</a>
+      <a href="VERSION.txt" download class="underline text-xs text-[#0ff2ff] hover:text-[#00e7f7]">VERSION.txt</a>
+      <a href="manifest.json" download class="underline text-xs text-[#0ff2ff] hover:text-[#00e7f7]">manifest.json</a>
+    </div>
+  </header>
+  <!-- Main Layout -->
+  <main class="flex-1 w-full max-w-7xl mx-auto flex flex-col-reverse md:flex-row gap-6 md:gap-10 px-2 md:px-6 py-6 md:py-10">
+    <!-- Blog List -->
+    <section class="flex-1">
+      <div class="mb-6 flex items-center gap-3">
+        <h2 class="text-2xl md:text-3xl font-bold neon">Recent Posts</h2>
+        <button id="filterAll" class="ml-auto text-xs px-3 py-1 rounded-full border border-[#0ff2ff60] bg-[#011a22] text-[#0ff2ff] hover:bg-[#0ff2ff20] transition">All</button>
+        <button id="filterSEO" class="text-xs px-3 py-1 rounded-full border border-[#0ff2ff60] bg-[#011a22] text-[#0ff2ff] hover:bg-[#0ff2ff20] transition">SEO</button>
+        <button id="filterPrompt" class="text-xs px-3 py-1 rounded-full border border-[#0ff2ff60] bg-[#011a22] text-[#0ff2ff] hover:bg-[#0ff2ff20] transition">Prompt</button>
+        <button id="filterMonetize" class="text-xs px-3 py-1 rounded-full border border-[#0ff2ff60] bg-[#011a22] text-[#0ff2ff] hover:bg-[#0ff2ff20] transition">Monetize</button>
+      </div>
+      <ul id="blogList" class="space-y-6">
+        <!-- Blog posts populated by JS below -->
+      </ul>
+    </section>
+    <!-- Sidebar: SEO Blog Prompt Generator -->
+    <aside class="w-full md:w-[400px] max-w-full mb-10 md:mb-0">
+      <div class="bg-[#101b25d8] ring-glow p-6 rounded-2xl shadow-xl border border-[#0ff2ff30]">
+        <h3 class="text-xl neon font-bold mb-3">SEO Blog Prompt Generator</h3>
+        <label for="sb-topic" class="block mb-1 text-[#90f8f6] font-medium">Blog Topic / Niche</label>
+        <input id="sb-topic" type="text" class="w-full px-3 py-2 bg-[#0a181e] neon text-[#0ff2ff] rounded-md mb-2 focus:ring-2 focus:ring-[#0ff2ff]" placeholder="e.g. AI Automation" autocomplete="off">
+        <label for="sb-kw" class="block mb-1 text-[#90f8f6] font-medium">Target Keywords</label>
+        <input id="sb-kw" type="text" class="w-full px-3 py-2 bg-[#0a181e] neon text-[#0ff2ff] rounded-md mb-2 focus:ring-2 focus:ring-[#0ff2ff]" placeholder="e.g. ChatGPT, Stripe, Blog" autocomplete="off">
+        <label for="sb-tone" class="block mb-1 text-[#90f8f6] font-medium">Tone</label>
+        <select id="sb-tone" class="w-full px-3 py-2 bg-[#0a181e] neon text-[#0ff2ff] rounded-md mb-3 focus:ring-2 focus:ring-[#0ff2ff]">
+          <option>Expert</option>
+          <option>Beginner-Friendly</option>
+          <option>Conversational</option>
+          <option>Technical</option>
+          <option>Persuasive</option>
+        </select>
+        <button id="sb-gen" class="w-full py-2 bg-[#0ff2ff] neon text-black font-bold rounded-lg hover:bg-[#0ee4d2] transition mb-2">Generate Prompt</button>
+        <textarea id="sb-output" rows="5" readonly class="w-full px-3 py-2 bg-[#071117e0] text-[#0ff2ff] neon rounded-lg font-mono mb-2 transition"></textarea>
+        <button id="sb-copy" class="w-full py-1 bg-[#00ffe7] neon text-black font-bold rounded-lg hover:bg-[#00e1cf] transition">Copy Prompt</button>
+      </div>
+      <div class="mt-4 text-center text-xs text-[#2bfffa] opacity-80">Privacy-safe, 100% offline. <a href="https://www.shroomtop420.com" target="_blank" class="underline text-[#0ff2ff] hover:text-[#5ef5ef] transition">Learn More</a></div>
+    </aside>
+  </main>
+  <!-- Footer / Social / PWA Install -->
+  <footer class="w-full px-4 py-6 text-center border-t border-[#0ff2ff22] bg-gradient-to-t from-[#0ff2ff0d] via-[#08181c90] to-[#000000fc]">
+    <div class="text-[#0ff2ff] neon font-bold text-lg mb-1">Shroomtop420™ — Recursion. Monetization. Offline-First.</div>
+    <div class="mb-2">
+      <a href="https://chat.openai.com/g/g-6839f983259881919fe8f36592d132ed-magic-prompter-500-prompt-ideas-generator" target="_blank" class="underline text-[#0ff2ff] hover:text-[#65fbfa] mx-2">Magic Prompter GPT</a>
+      <a href="https://shroomtop.github.io/magic-ideas/" target="_blank" class="underline text-[#0ff2ff] hover:text-[#65fbfa] mx-2">500+ Prompt Ideas</a>
+      <a href="https://buy.stripe.com/3cs162ggTdSm3WEaEE" target="_blank" class="underline text-[#0ff2ff] hover:text-[#65fbfa] mx-2">Stripe Paywall</a>
+    </div>
+    <div class="text-xs text-[#6ff9ff]">All content © Shroomtop420™. Fully open, but licensed — <a href="LICENSE.txt" class="underline">LICENSE.txt</a> | <span id="buildVer"></span></div>
+  </footer>
+  <!-- Blog Data & Logic -->
+  <script>
+    // Blog posts DB (extend as needed)
+    const posts = [
+      {
+        title: "How ChatGPT Is Revolutionizing YouTube: Unleash AI-Powered Content in 2025",
+        slug: "chatgpt-youtube-seo-2025",
+        date: "2025-05-30",
+        tags: ["SEO", "Prompt", "Monetize"],
+        excerpt: "Explore how ChatGPT + AI are transforming YouTube content creation, boosting engagement, and automating workflows for 2025.",
+        content: `
+### Meta
+- **Title:** How ChatGPT Is Revolutionizing YouTube: Unleash AI-Powered Content in 2025
+- **Description:** Discover how ChatGPT is transforming YouTube content creation, boosting engagement, and automating video workflows. Learn expert strategies and tools for 2025.
+
+## Why ChatGPT + YouTube Is the Ultimate Growth Hack
+YouTube is the world’s second-largest search engine. Standing out requires smart strategy and innovation—here’s where ChatGPT excels: scriptwriting, SEO, engagement.
+
+## 2025 SEO Strategies: AI Content for Maximum Visibility
+- Build videos that rank with prompts, keywords, meta, and outlines.
+- Automate content and optimize the creative.
+
+**Pro Tip:** Run your YouTube topic through a [prompt generator](https://www.shroomtop420.com) for SEO-tuned prompts.
+
+## Tools & Integrations
+- [ChatGPT YouTube Assistant](https://chat.openai.com/)
+- [Shroomtop420™ Prompt Generator](https://www.shroomtop420.com)
+- [YouTube Creator Studio](https://studio.youtube.com/)
+
+## Action Steps
+- Try the prompt generator, experiment with AI scriptwriting, and integrate into your workflow.
+
+*Questions or advanced strategies? Drop a comment or connect!*
+        `,
+        links: [
+          { name: "Prompt Generator", url: "https://www.shroomtop420.com" },
+          { name: "500+ Prompt Ideas", url: "https://shroomtop.github.io/magic-ideas/" }
+        ]
+      },
+      {
+        title: "SEO-Optimized Blog Prompt Generator — Supercharge Your Content",
+        slug: "seo-blog-prompt-generator",
+        date: "2025-05-30",
+        tags: ["SEO", "Prompt"],
+        excerpt: "Generate powerful, search-engine-friendly prompts for blogs and articles—engineered for 2025 SEO strategies.",
+        content: `
+### Meta
+- **Title:** SEO-Optimized Blog Prompt Generator
+- **Description:** Generate search-engine-friendly prompts for blogs, articles, and marketing. Fully offline, privacy-safe, and mobile-ready.
+
+## How-To
+1. Enter your topic and keywords.
+2. Select tone and click generate.
+3. Paste the prompt into ChatGPT for instant, rank-ready blog content.
+
+[Try it now in the sidebar →]
+        `,
+        links: [
+          { name: "Try Generator", url: "#sb-topic" },
+        ]
+      },
+      {
+        title: "The Shroomtop420™ Philosophy — Recursive Tools. Offline First. Built to Monetize.",
+        slug: "philosophy-recursive-tools-monetization",
+        date: "2025-05-28",
+        tags: ["Philosophy", "Monetize"],
+        excerpt: "Inside the radical, antifragile, and monetization-first approach behind every Shroomtop420™ tool.",
+        content: `
+## Core Principles
+- Recursion: Each tool evolves and builds on itself.
+- Monetization: Stripe, paywall, and licensing baked in.
+- Offline First: Works anywhere, no dependencies.
+
+**Explore the [full stack](/)** — built to monetize, scale, and persist.
+        `,
+        links: [
+          { name: "Home", url: "https://www.shroomtop420.com" }
+        ]
+      }
+      // Add more posts here!
+    ];
+
+    // LICENSE/README/meta manifest generators
+    const fileData = {
+      "LICENSE.txt": `Shroomtop420™ Blog & Tools\n\nCopyright (c) 2025 Shroomtop420™\n\nAll rights reserved. Use, remix, or share only with visible attribution and promptmeta.json. Commercial or paid use requires license/Stripe unlock. For full terms see https://www.shroomtop420.com/license`,
+      "README.txt": `# Shroomtop420™ Blog\n\n- Fully offline, PWA-ready neon prompt/SEO hub\n- Live AI prompt generator in sidebar\n- Stripe monetization hooks, LICENSE.txt included\n- Add posts by editing the JS array (no setup needed)\n- https://www.shroomtop420.com`,
+      "promptmeta.json": `{"author":"Shroomtop420™","version":"v2.1.0","type":"blog","schema":"https://shroomtop420.com/promptmeta.schema.json","license":"stripe-commercial-unlock","stack":["HTML5","TailwindCSS","ES6","Offline","PWA"]}`,
+      "VERSION.txt": `Shroomtop420™ Blog v2.1.0\nBuild: 2025-05-30\nStack: HTML5+Tailwind+ES6+PWA`,
+      "manifest.json": `{"name":"Shroomtop420™ Blog","short_name":"Shroomtop420","start_url":".","display":"standalone","background_color":"#000b14","theme_color":"#00ffe7","icons":[]}`
+    };
+    // Minimal offline service worker for cache
+    const swJS = `self.addEventListener('install',e=>e.waitUntil(caches.open('shroomtop-v1').then(c=>c.addAll(['.','index
+    // Minimal offline service worker for cache
+    const swJS = `
+self.addEventListener('install',e=>e.waitUntil(caches.open('shroomtop-v1').then(c=>c.addAll(['.','index.html']))));
+self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
+    `;
+
+    // Save LICENSE, README, manifest, meta, version (download links)
+    ["LICENSE.txt","README.txt","promptmeta.json","VERSION.txt","manifest.json"].forEach(fn=>{
+      document.querySelectorAll(`a[href='${fn}']`).forEach(a=>{
+        a.addEventListener('click',e=>{
+          e.preventDefault();
+          const file = new Blob([fileData[fn]],{type:"text/plain"});
+          const url = URL.createObjectURL(file);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = fn;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+        });
+      });
+    });
+
+    // Dynamically render posts
+    function renderPosts(tag="All") {
+      const list = document.getElementById("blogList");
+      list.innerHTML = "";
+      let shown = 0;
+      posts.forEach(post=>{
+        if(tag!=="All" && !post.tags.includes(tag)) return;
+        shown++;
+        const tags = post.tags.map(t=>`<span class="inline-block px-2 py-0.5 bg-[#0ff2ff15] text-xs rounded text-[#0ff2ff] mr-2">${t}</span>`).join('');
+        const date = new Date(post.date).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+        const el = document.createElement("li");
+        el.className = "bg-[#071117e0] ring-glow p-5 rounded-xl flex flex-col gap-1 transition";
+        el.innerHTML = `
+          <div class="flex justify-between items-center mb-1">
+            <h3 class="font-bold text-lg neon">${post.title}</h3>
+            <span class="text-xs text-[#71f7ff]">${date}</span>
+          </div>
+          <div class="mb-2">${tags}</div>
+          <div class="text-[#a1fdfe] mb-3">${post.excerpt}</div>
+          <details>
+            <summary class="cursor-pointer neon text-[#0ff2ff] font-bold hover:underline">Read More</summary>
+            <div class="mt-2 text-[#e3ffff] prose prose-invert max-w-none">${marked(post.content)}</div>
+            ${post.links && post.links.length
+              ? '<div class="mt-2 text-xs">' +
+                  post.links.map(l=>`<a href="${l.url}" class="underline text-[#0ff2ff] hover:text-[#63e6ff] mr-2" target="_blank">${l.name}</a>`).join('') +
+                '</div>'
+              : ''}
+          </details>
+        `;
+        list.appendChild(el);
+      });
+      if (!shown) list.innerHTML = `<li class="text-[#e5faff]">No posts in this category yet.</li>`;
+    }
+    // Filter buttons
+    ["All","SEO","Prompt","Monetize"].forEach(tag=>{
+      document.getElementById("filter"+tag)?.addEventListener("click",()=>renderPosts(tag==="All"?"All":tag));
+    });
+    renderPosts();
+
+    // Prompt Generator Sidebar
+    const sbTopic = document.getElementById('sb-topic');
+    const sbKw = document.getElementById('sb-kw');
+    const sbTone = document.getElementById('sb-tone');
+    const sbGen = document.getElementById('sb-gen');
+    const sbOut = document.getElementById('sb-output');
+    const sbCopy = document.getElementById('sb-copy');
+    sbGen.onclick = ()=>{
+      const topic = sbTopic.value.trim()||"[your topic]";
+      const keywords = sbKw.value.trim()||"[target keywords]";
+      const tone = sbTone.value;
+      sbOut.value =
 `You are an elite SEO strategist and expert blog author.
 
 Write a highly engaging, ${tone.toLowerCase()} blog post about "${topic}" targeting the following keywords: ${keywords}.
@@ -109,6 +298,45 @@ Format: Markdown.
 
 [Blog post starts below]`;
     };
+    sbCopy.onclick = ()=>{
+      sbOut.select();
+      document.execCommand('copy');
+      sbCopy.textContent = "Copied!";
+      setTimeout(()=>{sbCopy.textContent="Copy Prompt"}, 1000);
+    };
+
+    // Build version to footer
+    document.getElementById('buildVer').textContent = "Version 2.1.0 — " + new Date().toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+
+    // Analytics Hooks (local only)
+    function track(event, extra) {
+      try {
+        let log = JSON.parse(localStorage.getItem('shroomtop-blog-analytics')||"[]");
+        log.push({event,extra,time:Date.now()});
+        localStorage.setItem('shroomtop-blog-analytics',JSON.stringify(log.slice(-200)));
+      } catch(e){}
+    }
+    sbGen.addEventListener('click',()=>track("generate_prompt",{topic:sbTopic.value,kw:sbKw.value,tone:sbTone.value}));
+    sbCopy.addEventListener('click',()=>track("copy_prompt",{}));
+
+    // Marked.js for markdown rendering (CDN, minimal)
+    (()=>{
+      let script=document.createElement("script");
+      script.src="https://cdn.jsdelivr.net/npm/marked/marked.min.js";
+      script.onload=()=>{renderPosts()};
+      document.body.appendChild(script);
+    })();
+
+    // Generate minimal PWA service worker if not present
+    if (!window.location.href.includes("file://")) {
+      fetch('sw.js').catch(()=>{
+        const blob = new Blob([swJS],{type:'text/javascript'});
+        const url = URL.createObjectURL(blob);
+        fetch(url).then(r=>r.blob()).then(b=>{
+          navigator.serviceWorker.register(url);
+        });
+      });
+    }
   </script>
 </body>
 </html>
